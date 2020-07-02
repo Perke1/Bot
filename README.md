@@ -8,7 +8,6 @@ Node JS
 Node index.js (In terminal)
 
 # To do:
-- Fix storing size (third .find)
-- Adding to basket
+- Adding to basket 
 - Bypass Captcha
 - Checking out
