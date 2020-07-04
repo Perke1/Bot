@@ -1,0 +1,19 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Creating first supreme bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Perke1/Bot.git"
+  },
+  "author": "Perke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Perke1/Bot/issues"
+  },
+  "homepage": "https://github.com/Perke1/Bot#readme"
+}
