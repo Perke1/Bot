@@ -6,9 +6,9 @@ const axios = require('axios');
 fetch("https://www.supremenewyork.com/mobile_stock.json")
   .then(res => res.json())   
      .then((out) => {
-  const newCategory = out.products_and_categories.Accessories
+  const newCategory = out.products_and_categories.new
       // Defining variable as our desirable product
-  const desiredItem = newCategory.find((item) => item.name.includes("Supreme®/Hanes® Boxer Briefs (4 Pack)"))
+  const desiredItem = newCategory.find((item) => item.name.includes("Flags Rayon"))
       // Defining variable with id of our product
   const itemId = desiredItem.id          
       // Fetching more info about the product
