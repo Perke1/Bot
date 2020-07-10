@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Perke1/Bot/issues"
   },
-  "homepage": "https://github.com/Perke1/Bot#readme"
+  "homepage": "https://github.com/Perke1/Bot#readme",
+  "dependencies": {
+    "yarn": "^1.22.4",
+    "node-fetch": "2.6.0",
+    "axios":"0.19.2"
+  }
 }
