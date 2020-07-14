@@ -1,5 +1,5 @@
 const fetch = require("node-fetch")
-const axios = require('axios');
+const axios = require('axios')
 
 // Fetching item from json
 
@@ -16,30 +16,33 @@ fetch(`https://www.supremenewyork.com/shop/${itemId}.json`)
 .then(res => res.json())
 .then((out) => {
   const styles = out.styles
-  const desiredStyleId = styles.find((style) => style.name.includes("Black"))
- // console.log(desiredStyleId.id) // storing colour id
-  const sizes = styles[0].sizes
-  const test = sizes.find((size) => size.name.includes("XLarge"))
+  const desiredStyleId = styles.find((style) => style.name.includes("Flags"))
+  console.log(desiredStyleId.id) // storing colour id
+
+  //const sizes = styles[0].sizes
+  const test = desiredStyleId.sizes.find((size) => size.name.includes("Medium"))
   const desiredSize = test
-  //console.log(desiredSize.id) // storing size id
+  console.log(desiredSize.id) // storing size id
 
   console.log("Trying add to cart")
 
   const config = {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      'User-Agent': 'Mozilla/5.0 (iPhone9,3; U; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/14A403 Safari/602.1',
+      'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1',
     }
   }
 
-  axios.post(`https://www.supremenewyork.com/shop/${itemId}/add`,
+  console.log(itemId)
+
+  axios.post(`https://www.supremenewyork.com/shop/${itemId}/add.json`,
   {
-    style: desiredStyleId.id,
     size: desiredSize.id,
-    commit: 'add-to-basket',
+    style: desiredStyleId.id,
+    qty: 1,
   }, config)
   .then(function (response) {
-    console.log(response.status);
+    console.log(response.data);
   })
   .catch(function (error) {
     console.log(error.message);
